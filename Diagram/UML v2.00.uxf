@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>270</x>
+      <y>0</y>
+      <w>700</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>Game: Class_
+--
+Atributos
+name:std::string;
+--
+Methods
+Game():Game;
+Game(const std::string &amp;name):Game;
+&amp;getName() const:const std::string ;
+setName(const std::string &amp;name):void ;
+toString():std::string;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>510</x>
+      <y>350</y>
+      <w>250</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>Product: Class_
+--
+Atributes
+price:double;
+tax:double;
+discount:double;
+--
+Methods
+getPrice() const:double ;
+setPrice(double price):void ;
+getTax() const:double ;
+setTax(double tax):void ;
+getDiscount() const=0: double ;
+setDiscount(double Discount):void ;
+toString():std::string;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>610</x>
+      <y>150</y>
+      <w>30</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;200.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>920</x>
+      <y>1070</y>
+      <w>260</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>Save: Class_
+--
+Atributes
+recibo:Recivo*;
+--
+Methods
+save(const std::string &amp;filename):void;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>870</x>
+      <y>440</y>
+      <w>250</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>_Calculus: Class_
+--
+Methods
+calculatePriceWithTax():double;
+calculatePriceWithDiscount():double;
+toString():std::string;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>740</y>
+      <w>420</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>Physical: Class_
+--
+Atributes
+itemWeight:double;
+productDimensions:std::string;
+calculus:Calculus*;
+--
+Methods
+&amp;getProductDimensions() const:const std::string;
+setProductDimensions(const std::string &amp;productDimensions):void;
+getItemWeight() const:double ;
+setItemWeight(double itemWeight):void;
+toString():std::string;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>750</x>
+      <y>480</y>
+      <w>140</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>220</x>
+      <y>570</y>
+      <w>440</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>420.0;10.0;420.0;60.0;10.0;60.0;10.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>530</x>
+      <y>740</y>
+      <w>210</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>Digital: Class_
+--
+Atributes
+calculus:Calculus*;
+--
+Methods
+toString():std::string;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>630</x>
+      <y>570</y>
+      <w>30</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>330</x>
+      <y>530</y>
+      <w>720</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>700.0;10.0;700.0;100.0;10.0;100.0;10.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>630</x>
+      <y>530</y>
+      <w>360</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>340.0;10.0;340.0;100.0;10.0;100.0;10.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>830</x>
+      <y>720</y>
+      <w>180</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>Streaming: Class_
+--
+Atributes
+calculus:Calculus*;
+--
+Methods
+toString():std::string;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>630</x>
+      <y>570</y>
+      <w>330</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0;310.0;60.0;310.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>900</x>
+      <y>530</y>
+      <w>60</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0;40.0;100.0;40.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>570</x>
+      <y>1010</y>
+      <w>210</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>_Recivo: Class_
+--
+Atributes
+email:std::string;
+streaming:Streaming*;
+digital:Digital*;
+physical:Physical*;
+--
+Methods
+getEmail():std::string;
+setEmail(std::string):void;
+sendedEmail():void;
+toString():std::string;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>660</x>
+      <y>830</y>
+      <w>30</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>190</x>
+      <y>930</y>
+      <w>400</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0;380.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>770</x>
+      <y>810</y>
+      <w>190</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>170.0;10.0;170.0;220.0;10.0;220.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>770</x>
+      <y>1090</y>
+      <w>170</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;150.0;10.0</additional_attributes>
+  </element>
+</diagram>
