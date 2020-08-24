@@ -3,6 +3,10 @@
 //
 
 #include "Game.h"
+Game::Game() {
+
+}
+
 Game::Game(string name,double price):Producto(){
     Producto::_name=name;
     Producto::_price=price;

@@ -11,6 +11,7 @@ class Game:public Producto {
 private:
     //
 public:
+    Game();
     Game(string, double);
     virtual ~Game();
     const string & getName() const override;

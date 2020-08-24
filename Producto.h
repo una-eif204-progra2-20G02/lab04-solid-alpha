@@ -14,6 +14,7 @@ protected:
     double _price;
     string _name;
 public:
+    Producto(){;}
     const virtual string &getName() const=0;
     virtual void setName(const string& name)=0;
     virtual double getPrice()=0;
