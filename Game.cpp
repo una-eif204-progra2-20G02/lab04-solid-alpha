@@ -3,25 +3,25 @@
 //
 
 #include "Game.h"
-Game::Game() {
+Game::Game():Product(){
 
 }
 
-Game::Game(string name,double price):Producto(){
+Game::Game(string name,double price):Product(){
     Producto::_name=name;
     Producto::_price=price;
 }
 Game::~Game(){
 
 }
-const string & Game::getName() const {return Producto::_name;}
-void Game::setName(const string &name) {Producto::_name=name;}
-double Game::getPrice() {return Producto::_price;}
-void Game::setPrice(double price) {Producto::_price=price;}
+const string & Game::getName() const {return Product::_name;}
+void Game::setName(const string &name) {Product::_name=name;}
+double Game::getPrice() {return Product::_price;}
+void Game::setPrice(double price) {Product::_price=price;}
 string Game::toString() const {
     ostringstream s;
     s<<"==Game==\n";
-    s<<"Nombre: "<< Producto::_name<<endl;
-    s<<"Precio: "<<Producto::_price<<endl;
+    s<<"Name  : "<< Product::_name<<endl;
+    s<<"Price : "<<Product::_price<<endl;
     return s.str();
 }
