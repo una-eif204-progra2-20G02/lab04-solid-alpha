@@ -3,7 +3,7 @@
 //
 
 #include "Movie.h"
-Movie::Movie(string name,double price){
+Movie::Movie(string name,double price):Producto(){
     Producto::_name=name;
     Producto::_price=price;
 }
@@ -16,6 +16,7 @@ double Movie::getPrice() {return Producto::_price;}
 void Movie::setPrice(double price) {Producto::_price=price;}
 string Movie::toString() const {
     ostringstream s;
+    s<<"==Movie==\n";
     s<<"Nombre: "<< Producto::_name<<endl;
     s<<"Precio: "<<Producto::_price<<endl;
     return s.str();
