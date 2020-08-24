@@ -3,21 +3,25 @@
 //
 
 #include "Movie.h"
-Movie::Movie(string name,double price):Producto(){
-    Producto::_name=name;
-    Producto::_price=price;
+
+Movie::Movie():Product() {
+
+}
+Movie::Movie(std::string name,double price):Product(){
+    Product::_name=name;
+    Product::_price=price;
 }
 Movie::~Movie(){
 
 }
-const string & Movie::getName() const {return Producto::_name;}
-void Movie::setName(const string &name) {Producto::_name=name;}
-double Movie::getPrice() {return Producto::_price;}
-void Movie::setPrice(double price) {Producto::_price=price;}
-string Movie::toString() const {
-    ostringstream s;
+const std::string & Movie::getName() const {return Product::_name;}
+void Movie::setName(const std::string &name) {Product::_name=name;}
+double Movie::getPrice() const {return Product::_price;}
+void Movie::setPrice(double price) {Product::_price=price;}
+std::string Movie::toString() const {
+    std::ostringstream s;
     s<<"==Movie==\n";
-    s<<"Nombre: "<< Producto::_name<<endl;
-    s<<"Precio: "<<Producto::_price<<endl;
+    s<<"Name  : "<< Movie::getName()<<std::endl;
+    s<<"Price : "<<Movie::getPrice()<<std::endl;
     return s.str();
 }
