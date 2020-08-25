@@ -35,7 +35,7 @@ public:
 private:
     std::string _email;
     Digital* _digital=new Digital();
-    Streaming* _streaming= new Streaming(nullptr);
+    Streaming* _streaming= new Streaming();
     Physical* _physical=new Physical();
     std::vector<Digital> _listDigital;
     std::vector<Streaming> _listStreaming;
