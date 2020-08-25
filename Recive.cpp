@@ -3,14 +3,18 @@
 //
 
 #include "Recive.h"
+
 Recive::Recive(std::string email) {
     _email=email;
 }
-
+Recive::Recive(std::string email, Digital *const digital, Streaming *const streaming, Physical *const physical){
+    _email=email;
+    _digital=digital;
+    _streaming=streaming;
+    _physical=physical;
+}
 Recive::~Recive() {
-    delete _streaming;
-    delete _digital;
-    delete _physical;
+
 }
  std::string Recive::getEmail()const{
  return _email;
@@ -38,14 +42,14 @@ void Recive::setStreaming(Streaming* streaming){
     _streaming=streaming;
 }
 
-[[maybe_unused]] void Recive::addPhysical(Physical *physical){
+void Recive::addPhysical(Physical* physical){
 _listPhysical.push_back(*physical);
 }
 void Recive::addDigital(Digital* digital){
 _listDigital.push_back(*digital);
 }
 
-[[maybe_unused]]void Recive::addStreaming(Streaming * streaming){
+void Recive::addStreaming(Streaming * streaming){
 _listStreaming.push_back(*streaming);
 }
 void Recive::save(const std::string &filename){
@@ -56,15 +60,15 @@ void Recive::save(const std::string &filename){
 }
 std::string Recive::toString()const{
     std::ostringstream s;
-    s<<"Correo enviado  al correo"<<getEmail()<<"\n";
+    s<<"Correo enviado  al correo a  "<<getEmail()<<"\n";
     {
-        for (int i = 0; i < _listStreaming.size(); i++) {
-            s << _listStreaming.data()[i].toString() << "\n";
+        for (int i = 0;i<_listStreaming.size(); i++) {
+            s <<_listStreaming.data()[i].toString() << "\n";
         }
-        for (int j = 0; j < _listDigital.size(); j++) {
+        for (int j = 0;j<_listDigital.size(); j++) {
             s << _listDigital.data()[j].toString() << "\n";
         }
-        for (int k = 0; k < _listPhysical.size(); k++) {
+        for (int k = 0;k< _listPhysical.size(); k++) {
             s << _listPhysical.data()[k].toString() << "\n";
         }
     }
