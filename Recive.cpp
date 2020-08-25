@@ -38,32 +38,35 @@ void Recive::setStreaming(Streaming* streaming){
     _streaming=streaming;
 }
 
- void Recive::addPhysical(Physical *physical){
+[[maybe_unused]] void Recive::addPhysical(Physical *physical){
 _listPhysical.push_back(*physical);
 }
 void Recive::addDigital(Digital* digital){
 _listDigital.push_back(*digital);
 }
 
- void Recive::addStreaming(Streaming * streaming){
+[[maybe_unused]]void Recive::addStreaming(Streaming * streaming){
 _listStreaming.push_back(*streaming);
 }
 void Recive::save(const std::string &filename){
-    std::ofstream out (filename, std::ios_base::app);
+    std::ofstream out (filename, std::ios_base::trunc);
     out<<Recive::toString();
     out.close();
 
 }
 std::string Recive::toString()const{
     std::ostringstream s;
-for(int i=0;i<_listStreaming.size();i++){
-    s<<_listStreaming.data()[i].toString()<<"\n";
-}
-   for(int j=0;j<_listDigital.size();j++){
-        s<<_listDigital.data()[j].toString()<<"\n";
-    }
-    for(int k=0;k<_listPhysical.size();k++){
-        s<<_listPhysical.data()[k].toString()<<"\n";
+    s<<"Correo enviado  al correo"<<getEmail()<<"\n";
+    {
+        for (int i = 0; i < _listStreaming.size(); i++) {
+            s << _listStreaming.data()[i].toString() << "\n";
+        }
+        for (int j = 0; j < _listDigital.size(); j++) {
+            s << _listDigital.data()[j].toString() << "\n";
+        }
+        for (int k = 0; k < _listPhysical.size(); k++) {
+            s << _listPhysical.data()[k].toString() << "\n";
+        }
     }
 return s.str();
 }

@@ -3,7 +3,7 @@
 //
 
 #include "Streaming.h"
-Streaming::Streaming(Movie *movie) : ICalculusTax(), _movie(movie) {}
+Streaming::Streaming() : ICalculusTax() {}
 
 Streaming::Streaming(double tax,Game* game, Movie* movie):ICalculusTax() {
     _game=game;
@@ -14,6 +14,18 @@ Streaming::~Streaming() {
     delete _game;
     delete _movie;
 }
+Game* Streaming::getGame()const{
+    return _game;
+}
+void Streaming::setGame(Game* game){
+    _game=game;
+}
+void Streaming::setMovie(Movie* movie){
+    _movie=movie;
+}
+Movie* Streaming::getMovie()const{
+    return _movie;
+}
 double Streaming::getTax() const{
  return _tax;
 }
@@ -23,23 +35,23 @@ double Streaming::getTax() const{
 
  double Streaming::calculatePriceWithTaxGame()const {
     double valor=0.0;
-        valor=((_game->getPrice())*(1+Streaming::getTax()));
+        valor=((getGame()->getPrice())*(1+Streaming::getTax()));
     return valor;
 
 }
 double Streaming::calculatePriceWithTaxMovie()const {
     double valor=0.0;
-    valor=((_movie->getPrice())*(1+Streaming::getTax()));
+    valor=((getMovie()->getPrice())*(1+Streaming::getTax()));
     return valor;
 }
 std::string Streaming::toString()const{
     std::ostringstream s;
 
-        s <<_game->toString();
+        s <<getGame()->toString();
         s<<Streaming::calculatePriceWithTaxGame()<<" colones"<<"\n";
 
 
-        s<<_movie->toString();
+        s<<getMovie()->toString();
         s<<Streaming::calculatePriceWithTaxMovie()<<" colones"<<"\n";
 
     return s.str();

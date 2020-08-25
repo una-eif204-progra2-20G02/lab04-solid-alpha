@@ -46,7 +46,7 @@ double Digital::calculatePriceWithTaxGame() const {
 
 double Digital::calculateDiscountGame()const{
     double x=0.0;
-     x=_game->getPrice()*(1-Digital::getDiscount());
+     x=getGame()->getPrice()*(1-Digital::getDiscount());
     return x;
 }
 double Digital::calculatePriceWithTaxMovie()const {
@@ -66,10 +66,10 @@ std::string Digital::toString()const{
     std::ostringstream s;
 
 
-            s << _game->toString() ;
+            s << getGame()->toString() ;
             s << "Price with discout: " << Digital::calculateDiscountGame() <<" colones"<<"\n";
             s << "Price with tax: " << Digital::calculatePriceWithTaxGame() <<" colones"<<"\n";
-            s << _movie->toString();
+            s << getMovie()->toString();
             s << "Price with discout: " << Digital::calculateDiscountMovie() <<" colones"<<"\n";
             s << "Price with tax: " << Digital::calculatePriceWithTaxMovie() <<" colones"<<"\n";
 

@@ -13,8 +13,11 @@ int main() {
     Movie* _m2= new Movie("MI 5",23222);
     Game* _g2=new Game("God Of War 5",50000);
     Digital* _d0=new Digital(0.15,0.20,_g0,_m2);
+
     Streaming* _s0=new Streaming(0.15,_g1,_m0);
+
     Physical* _p0=new Physical(0.15,0.567, "4x5x6 cm",_g2, _m2);
+
     Recive* _r0=new Recive("santamaria@gmail.com");
     _r0->setStreaming(_s0);
     _r0->addDigital(_d0);

@@ -26,7 +26,8 @@ public:
    virtual void setDigital(Digital*);
     virtual Streaming* getStreaming()const;
     virtual void setStreaming(Streaming*);
-    virtual void addPhysical(Physical*);
+
+    [[maybe_unused]] virtual void addPhysical(Physical*);
     virtual void addDigital(Digital*);
 
     [[maybe_unused]] virtual void addStreaming(Streaming*);

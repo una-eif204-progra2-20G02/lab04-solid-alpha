@@ -12,6 +12,10 @@ public:
     Streaming();
     Streaming(double, Game*, Movie*);
     ~Streaming();
+    virtual Game* getGame()const;
+    virtual void setGame(Game*);
+    virtual Movie* getMovie()const;
+    virtual void setMovie(Movie*);
     virtual double getTax() const;
     virtual void setTax(double tax);
     virtual double calculatePriceWithTaxGame()const override;

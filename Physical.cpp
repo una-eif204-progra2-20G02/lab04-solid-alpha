@@ -14,7 +14,18 @@ Physical::~Physical(){
 delete _game;
 delete _movie;
 }
-
+Game* Physical::getGame()const{
+    return _game;
+}
+void Physical::setGame(Game* game){
+    _game=game;
+}
+Movie* Physical::getMovie()const{
+    return _movie;
+}
+void Physical::setMovie(Movie* movie){
+    _movie=movie;
+}
 std::string Physical::getProductDimensions()const{
     return _productDimensions;
 }
@@ -37,22 +48,22 @@ void Physical::setTax(double tax){
 }
 double Physical::calculatePriceWithTaxGame()const{
     double valor=0.0;
-        valor=((_game->getPrice())*(1+Physical::getTax()));
+        valor=((getGame()->getPrice())*(1+Physical::getTax()));
     return valor;
 }
 double Physical::calculatePriceWithTaxMovie()const{
     double valor=0.0;
-    valor=((_movie->getPrice())*(1+Physical::getTax()));
+    valor=((getMovie()->getPrice())*(1+Physical::getTax()));
     return valor;
 }
 std::string Physical::toString()const{
     std::ostringstream s;
 
-        s <<_game->toString()<<"\n";
+        s <<getGame()->toString()<<"\n";
         s<<"Weight of Game: "<<getItemWeight()<<"\n";
         s<<"Dimension of Game: "<<getProductDimensions()<<" lb""\n";
         s<<"Price with tax: "<<Physical::calculatePriceWithTaxGame()<<" colones"<<"\n";
-        s<<_movie->toString()<<"\n";
+        s<<getMovie()->toString()<<"\n";
         s<<"Weight of Movie: "<<getItemWeight()<<"\n";
         s<<"Dimension of Movie: "<<getProductDimensions()<<"\n";
         s<<"Price with tax: "<<Physical::calculatePriceWithTaxMovie()<<" colones"<<"\n";

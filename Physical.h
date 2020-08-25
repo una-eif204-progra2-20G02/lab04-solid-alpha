@@ -14,6 +14,10 @@ public:
     Physical();
     Physical(double,double,std::string, Game*,Movie*);
     ~Physical();
+    virtual Game* getGame()const;
+    virtual void setGame(Game*);
+    virtual Movie* getMovie()const;
+    virtual void setMovie(Movie*);
     virtual std::string getProductDimensions()const;
     virtual double getItemWeight()const;
     virtual double getTax()const;
