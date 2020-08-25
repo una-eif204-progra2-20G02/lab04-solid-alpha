@@ -6,25 +6,51 @@
 #include "Recive.h"
 int main() {
 
-    Movie* _m0= new Movie("Gataca",23222);
-    Game* _g0=new Game("Resident Evil",50000);
-    Movie* _m1= new Movie("Ovlivion",23222);
-    Game* _g1=new Game("Far Cry",50000);
-    Movie* _m2= new Movie("MI 5",23222);
-    Game* _g2=new Game("God Of War 5",50000);
-    Digital* _d0=new Digital(0.15,0.20,_g0,_m2);
 
-    Streaming* _s0=new Streaming(0.15,_g1,_m0);
+    Game* _game0=new Game("Resident Evil",60000);
+    Game* _game1=new Game("Far Cry",50000);
 
-    Physical* _p0=new Physical(0.15,0.567, "4x5x6 cm",_g2, _m2);
+    Digital* _digital0=new Digital(0.15,0.20,_game0);
+    Digital* _digital1=new Digital(0.17,0.29,_game1);
 
-    Recive* _r0=new Recive("santamaria@gmail.com");
-    _r0->setStreaming(_s0);
-    _r0->addDigital(_d0);
-    _r0->setPhysical(_p0);
 
-    std::cout<<_r0->toString();
-    _r0->save("../save.txt");
+    Streaming* _streaming0=new Streaming(0.15,_game0);
+    Streaming* _streaming1=new Streaming(0.19,_game1);
+
+
+    Physical* _physical0=new Physical(0.15,0.567, "20x5x25 cm",_game0);
+    Physical* _physical1=new Physical(0.19,0.567, "20x5x25 cm",_game1);
+
+
+    Recive* _recive0=new Recive("mariamagdalena@gmail.com");
+
+    _recive0->addDigital(_digital1);
+    _recive0->addStreaming(_streaming0);
+
+    Recive* _recive1=new Recive("josedanimatea@gmail.com");
+
+    _recive1->addDigital(_digital0);
+    _recive1->addStreaming(_streaming1);
+
+    Recive* _recive2=new Recive("cristo@gmail.com");
+
+    _recive2->addPhysical(_physical0);
+    _recive2->addStreaming(_streaming1);
+
+    Recive* _recive3=new Recive("santamaria@gmail.com");
+
+    _recive3->addPhysical(_physical1);
+    _recive3->addDigital(_digital0);
+
+    std::cout<<_recive0->toString();
+    std::cout<<_recive1->toString();
+    std::cout<<_recive2->toString();
+    std::cout<<_recive3->toString();
+
+    _recive0->save("../save0.txt");
+    _recive1->save("../save1.txt");
+    _recive2->save("../save2.txt");
+    _recive3->save("../save3.txt");
 
 
 
