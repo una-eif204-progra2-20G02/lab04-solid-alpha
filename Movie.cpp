@@ -4,20 +4,20 @@
 
 #include "Movie.h"
 
-Movie::Movie():Product() {
+Movie::Movie():Producto() {
 
 }
-Movie::Movie(std::string name,double price):Product(){
+Movie::Movie(std::string name,double price):Producto(){
     Producto::_name=name;
     Producto::_price=price;
 }
 Movie::~Movie(){
 
 }
-const std::string & Movie::getName() const {return Product::_name;}
-void Movie::setName(const std::string &name) {Product::_name=name;}
-double Movie::getPrice() const {return Product::_price;}
-void Movie::setPrice(double price) {Product::_price=price;}
+const std::string & Movie::getName() const {return Producto::_name;}
+void Movie::setName(const std::string &name) {Producto::_name=name;}
+double Movie::getPrice() {return Producto::_price;}
+void Movie::setPrice(double price) {Producto::_price=price;}
 std::string Movie::toString() const {
     std::ostringstream s;
     s<<"==Movie==\n";
@@ -25,3 +25,5 @@ std::string Movie::toString() const {
     s<<"Price : "<<Movie::getPrice()<<std::endl;
     return s.str();
 }
+
+Movie::Movie() {}

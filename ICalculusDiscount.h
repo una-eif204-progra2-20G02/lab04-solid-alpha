@@ -7,9 +7,10 @@
 #include "Game.h"
 
 class ICalculusDiscount: public Game {
+public:
     ICalculusDiscount();
     ~ICalculusDiscount();
-    virtual double calculaeDiscount()const= 0;
+    virtual double calculateDiscount() = 0;
 
 protected:
     Game* _g;

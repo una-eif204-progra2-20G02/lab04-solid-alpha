@@ -12,6 +12,9 @@ private:
     //
 public:
     Movie(string, double);
+
+    Movie();
+
     virtual ~Movie();
     const string & getName() const override;
     void setName(const string &name) override;
