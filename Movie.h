@@ -5,22 +5,20 @@
 #ifndef LAB04_SOLID_MOVIE_H
 #define LAB04_SOLID_MOVIE_H
 
-#include "Producto.h"
+#include "Product.h"
 
-class Movie:public Producto {
+class Movie:public Product {
 private:
     //
 public:
-    Movie(string, double);
-
     Movie();
-
+    Movie(std::string, double);
     virtual ~Movie();
-    const string & getName() const override;
-    void setName(const string &name) override;
-    double getPrice() override;
-    void setPrice(double price) override;
-    string toString() const override;
+    virtual const std::string & getName() const override;
+    virtual void setName(const std::string &name) override;
+    virtual double getPrice()const override;
+    virtual void setPrice(const double price) override;
+    virtual std::string toString() const override;
 
 };
 

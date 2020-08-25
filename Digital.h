@@ -4,29 +4,38 @@
 
 #ifndef LAB04_SOLID_DIGITAL_H
 #define LAB04_SOLID_DIGITAL_H
-#include <iostream>
-#include <sstream>
+#include <vector>
 #include "Game.h"
 #include "Movie.h"
 #include "ICalculusTax.h"
 #include "ICalculusDiscount.h"
-using namespace std;
-class Digital : public Game, public Movie, public ICalculusTax, public ICalculusDiscount
+class Game;
+class Movie;
+class Digital :public ICalculusTax, public ICalculusDiscount
 {
-private:
-    Game* _games;
-    Movie* _movies;
-    ICalculusTax* _iCalculusTax;
-    ICalculusDiscount* _iCalculusDiscount;
 public:
-    Digital(ICalculusTax*, ICalculusDiscount*,Movie*,Game*);
+    Digital();
+    Digital(double,double,Game*, Movie*);
     ~Digital();
-    double getDiscount();
-    double getTax();
-    void setDiscount(double);
-    void setTax(double);
-    double calculatePriceWithTax() override;
-    double calculateDiscount() override;
-    string toString();
+    virtual double getDiscount()const ;
+    virtual double getTax()const;
+    virtual void setDiscount(double);
+    virtual void setTax(double);
+    virtual Game* getGame()const;
+    virtual void setGame(Game*);
+    virtual Movie* getMovie()const;
+    virtual void setMovie(Movie*);
+    virtual double calculatePriceWithTaxGame()const override;
+    virtual double calculateDiscountGame()const override;
+    virtual double calculatePriceWithTaxMovie()const override;
+    virtual double calculateDiscountMovie()const override;
+    virtual std::string toString()const;
+private:
+    double _tax;
+    double _discount;
+    ICalculusTax* _ct;
+    ICalculusDiscount* _cd;
+    Game* _game=new Game();
+    Movie* _movie=new Movie();
 };
 #endif //LAB04_SOLID_DIGITAL_H

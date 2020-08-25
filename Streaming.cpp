@@ -3,41 +3,44 @@
 //
 
 #include "Streaming.h"
+Streaming::Streaming(Movie *movie) : ICalculusTax(), _movie(movie) {}
 
-Streaming::Streaming(Game* g, Movie * m):_m(m),_g(g){}
-Streaming::~Streaming() {}
+Streaming::Streaming(double tax,Game* game, Movie* movie):ICalculusTax() {
+    _game=game;
+    _movie=movie;
+    _tax = tax;
+}
+Streaming::~Streaming() {
+    delete _game;
+    delete _movie;
+}
 double Streaming::getTax() const{
- return ICalculusTax::_tax;
+ return _tax;
 }
  void Streaming::setTax(double tax){
-     ICalculusTax::_tax=tax;
+     _tax=tax;
 }
-bool Streaming::getVariable()const{
-    return _variable;
-}
- void Streaming::setVariable(bool variable){
-    _variable=variable;
-}
- double Streaming::calculatePriceWithTax()const {
+
+ double Streaming::calculatePriceWithTaxGame()const {
     double valor=0.0;
-    if(Streaming::getVariable()==true){
-        valor=((_g->getPrice())*(Streaming::getTax()));
-    }
-    else if(Streaming::getVariable()==false){
-         valor=((_m->getPrice())*(Streaming::getTax()));
-    }
+        valor=((_game->getPrice())*(1+Streaming::getTax()));
     return valor;
 
 }
+double Streaming::calculatePriceWithTaxMovie()const {
+    double valor=0.0;
+    valor=((_movie->getPrice())*(1+Streaming::getTax()));
+    return valor;
+}
 std::string Streaming::toString()const{
     std::ostringstream s;
-    if(Streaming::getVariable()==true) {
-        s <<_g->toString();
-        s<<Streaming::calculatePriceWithTax()<<std::endl;
-    }
-    else if(Streaming::getVariable()==false){
-        s<<_m->toString();
-        s<<Streaming::calculatePriceWithTax()<<std::endl;
-    }
+
+        s <<_game->toString();
+        s<<Streaming::calculatePriceWithTaxGame()<<" colones"<<"\n";
+
+
+        s<<_movie->toString();
+        s<<Streaming::calculatePriceWithTaxMovie()<<" colones"<<"\n";
+
     return s.str();
 }

@@ -7,21 +7,21 @@ Game::Game():Product(){
 
 }
 
-Game::Game(string name,double price):Product(){
-    Producto::_name=name;
-    Producto::_price=price;
+Game::Game(std::string name,double price):Product(){
+    Product::_name=name;
+    Product::_price=price;
 }
 Game::~Game(){
 
 }
-const string & Game::getName() const {return Product::_name;}
-void Game::setName(const string &name) {Product::_name=name;}
-double Game::getPrice() {return Product::_price;}
+const std::string & Game::getName() const {return Product::_name;}
+void Game::setName(const std::string &name) {Product::_name=name;}
+double Game::getPrice() const {return Product::_price;}
 void Game::setPrice(double price) {Product::_price=price;}
-string Game::toString() const {
-    ostringstream s;
+std::string Game::toString() const {
+    std::ostringstream s;
     s<<"==Game==\n";
-    s<<"Name  : "<< Product::_name<<endl;
-    s<<"Price : "<<Product::_price<<endl;
+    s<<"Name  : "<<Game::getName()<<std::endl;
+    s<<"Price : "<<Game::getPrice()<<" colones"<<"\n";
     return s.str();
 }

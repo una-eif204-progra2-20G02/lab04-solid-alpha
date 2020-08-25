@@ -4,35 +4,31 @@
 
 #ifndef LAB04_SOLID_PHYSICAL_H
 #define LAB04_SOLID_PHYSICAL_H
-#include <iostream>
-#include <sstream>
 #include "Game.h"
 #include "Movie.h"
 #include "IEspecificationsDiscountClass.h"
 #include "ICalculusTax.h"
-using namespace std;
-class   Physical : public Game, public Movie, public IEspecificationsDiscount, public ICalculusTax
-        {
-        private:
-            Game* _games;
-            Movie* _movies;
-            ICalculusTax* _iCalculusTax;
-            IEspecificationsDiscount* _iEspecifications;
-        public:
-            Physical(string unnamed2, double unnamed3, double unnamed, string unnamed1,
-                     IEspecificationsDiscount *especificationsDiscount, ICalculusTax *calculusTax, Movie *movie,
-                     Game *game);
-            Physical(string unnamed2, double unnamed3, double unnamed, string unnamed1, double itemWeight,
-                     string productDimensions);
-            ~Physical();
-            string getProductDimensions();
-            double getItemWeight();
-            double getTax();
-            void setProductDimensions(string);
-            void setItemWeight(double);
-            void setTax(double);
-            virtual double calculatePriceWithTax() override;
-            string toString();
+
+class Physical : public ICalculusTax,public IEspecificationsDiscount{
+public:
+    Physical();
+    Physical(double,double,std::string, Game*,Movie*);
+    ~Physical();
+    virtual std::string getProductDimensions()const;
+    virtual double getItemWeight()const;
+    virtual double getTax()const;
+    virtual void setProductDimensions(std::string);
+    virtual void setItemWeight(double);
+    virtual void setTax(double);
+    virtual double calculatePriceWithTaxGame() const override;
+    virtual double calculatePriceWithTaxMovie() const override;
+    virtual std::string toString()const;
+private:
+    double _tax;
+    Game* _game=new Game();
+    Movie* _movie=new Movie();
+    double _itemWeight;
+    std::string _productDimensions;
 };
 
 #endif //LAB04_SOLID_PHYSICAL_H
