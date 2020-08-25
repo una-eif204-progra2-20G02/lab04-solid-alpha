@@ -8,8 +8,8 @@ Movie::Movie():Product() {
 
 }
 Movie::Movie(std::string name,double price):Product(){
-    Product::_name=name;
-    Product::_price=price;
+    Producto::_name=name;
+    Producto::_price=price;
 }
 Movie::~Movie(){
 
