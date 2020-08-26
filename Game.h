@@ -8,18 +8,20 @@
 #include "Product.h"
 
 class Game:public Product {
-private:
-    //
+
 public:
     Game();
     Game(std::string, double);
     virtual ~Game();
-    virtual const std::string & getName() const override;
-    virtual void setName(const std::string &name) override;
-    virtual double getPrice() const override;
-    virtual void setPrice(const double price) override;
+    virtual const std::string & getName() const;
+    virtual void setName(const std::string &name);
+    virtual double getPrice() const;
+    virtual void setPrice(const double price);
     std::string toString() const override;
 
+private:
+    double _price;
+    std::string _name;
 };
 
 

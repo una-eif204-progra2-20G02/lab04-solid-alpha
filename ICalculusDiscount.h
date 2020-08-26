@@ -5,17 +5,16 @@
 #ifndef LAB04_SOLID_ICALCULUSDISCOUNT_H
 #define LAB04_SOLID_ICALCULUSDISCOUNT_H
 #include "Game.h"
-#include "Movie.h"
 
-class ICalculusDiscount: public Game,public Movie {
+
+class ICalculusDiscount: public Game {
 public:
 
     ICalculusDiscount();
     ~ICalculusDiscount();
     virtual double calculateDiscountGame()const = 0;
-    virtual double calculateDiscountMovie()const = 0;
-public:
-    double _discount;
+    virtual std::string toString()const=0;
+
 };
 
 

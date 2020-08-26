@@ -8,16 +8,16 @@ Game::Game():Product(){
 }
 
 Game::Game(std::string name,double price):Product(){
-    Product::_name=name;
-    Product::_price=price;
+   _name=name;
+   _price=price;
 }
 Game::~Game(){
 
 }
-const std::string & Game::getName() const {return Product::_name;}
-void Game::setName(const std::string &name) {Product::_name=name;}
-double Game::getPrice() const {return Product::_price;}
-void Game::setPrice(double price) {Product::_price=price;}
+const std::string & Game::getName() const {return _name;}
+void Game::setName(const std::string &name) {_name=name;}
+double Game::getPrice() const {return _price;}
+void Game::setPrice(double price) {_price=price;}
 std::string Game::toString() const {
     std::ostringstream s;
     s<<"==Game==\n";

@@ -4,27 +4,22 @@
 
 #ifndef LAB04_SOLID_STREAMING_H
 #define LAB04_SOLID_STREAMING_H
-#include "Movie.h"
 #include "Game.h"
 #include "ICalculusTax.h"
 class Streaming:public ICalculusTax {
 public:
     Streaming();
-    Streaming(double, Game*, Movie*);
+    Streaming(double, Game*);
     ~Streaming();
     virtual Game* getGame()const;
     virtual void setGame(Game*);
-    virtual Movie* getMovie()const;
-    virtual void setMovie(Movie*);
     virtual double getTax() const;
     virtual void setTax(double tax);
     virtual double calculatePriceWithTaxGame()const override;
-    virtual double calculatePriceWithTaxMovie()const override;
     virtual std::string toString()const;
 private:
     double _tax;
     Game* _game=new Game();
-    Movie *_movie=new Movie();
 };
 
 

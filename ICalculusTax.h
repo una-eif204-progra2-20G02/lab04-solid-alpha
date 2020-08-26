@@ -5,16 +5,15 @@
 #ifndef LAB04_SOLID_ICALCULUSTAX_H
 #define LAB04_SOLID_ICALCULUSTAX_H
 #include "Game.h"
-#include "Movie.h"
 
-class ICalculusTax:public Movie,public Game {
+
+class ICalculusTax:public Game {
 public:
 
     ICalculusTax();
     ~ICalculusTax();
     virtual double calculatePriceWithTaxGame() const = 0;
-    virtual double calculatePriceWithTaxMovie() const = 0;
-
+    virtual std::string toString()const=0;
 };
 
 

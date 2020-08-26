@@ -4,7 +4,7 @@
 
 #include "ICalculusTax.h"
 
-ICalculusTax::ICalculusTax():Movie(),Game(){
+ICalculusTax::ICalculusTax():Game(){
 
 }
 ICalculusTax::~ICalculusTax(){

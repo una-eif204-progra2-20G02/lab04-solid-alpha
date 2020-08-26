@@ -5,6 +5,8 @@
 #ifndef LAB04_SOLID_RECIVE_H
 #define LAB04_SOLID_RECIVE_H
 #include <vector>
+#include <sstream>
+#include <string>
 #include <iostream>
 #include <fstream>
 #include "Streaming.h"
@@ -16,21 +18,21 @@ class Digital;
 class Streaming;
 class Recive {
 public:
+
     Recive(std::string);
+    Recive(std::string, Digital*const, Streaming* const, Physical* const);
     ~Recive();
     virtual std::string getEmail()const;
     virtual void setEmail(std::string);
-   virtual Physical* getPhysical()const;
+    virtual Physical* getPhysical()const;
     virtual void setPhysical(Physical*);
     virtual Digital* getDigital()const;
-   virtual void setDigital(Digital*);
+    virtual void setDigital(Digital*);
     virtual Streaming* getStreaming()const;
     virtual void setStreaming(Streaming*);
-
-    [[maybe_unused]] virtual void addPhysical(Physical*);
-    virtual void addDigital(Digital*);
-
-    [[maybe_unused]] virtual void addStreaming(Streaming*);
+    virtual void addPhysical(Physical* );
+    virtual void  addDigital(Digital* );
+    virtual void addStreaming (Streaming* );
     virtual void save(const std::string &filename);
     virtual std::string toString()const;
 private:

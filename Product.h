@@ -13,14 +13,9 @@ class Product{
 public:
     Product(){;}
     ~Product(){;}
-    const virtual std::string &getName() const=0;
-    virtual void setName(const std::string& name)=0;
-    virtual double getPrice()const=0;
-    virtual void setPrice(const double price)=0;
     virtual std::string toString()const =0;
-protected:
-    double _price;
-    std::string _name;
+
+
 
 };
 

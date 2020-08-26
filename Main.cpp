@@ -21,7 +21,6 @@ int main() {
     Physical* _physical0=new Physical(0.15,0.567, "20x5x25 cm",_game0);
     Physical* _physical1=new Physical(0.19,0.567, "20x5x25 cm",_game1);
 
-
     Recive* _recive0=new Recive("mariamagdalena@gmail.com");
 
     _recive0->addDigital(_digital1);

@@ -4,7 +4,7 @@
 
 #include "ICalculusDiscount.h"
 
-ICalculusDiscount::ICalculusDiscount():Movie(),Game() {
+ICalculusDiscount::ICalculusDiscount():Game() {
 
 }
 ICalculusDiscount::~ICalculusDiscount() noexcept {
