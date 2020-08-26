@@ -9,7 +9,7 @@ _tax=tax;
 _discount=discount;
 }
 Digital::~Digital(){
-    delete _game;
+
 }
 double Digital::getDiscount()const{
     return _discount;

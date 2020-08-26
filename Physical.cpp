@@ -10,7 +10,7 @@ Physical::Physical(double tax, double itemWeight, std::string productDimensions,
  _productDimensions=productDimensions;
 }
 Physical::~Physical(){
-delete _game;
+
 }
 Game* Physical::getGame()const{
     return _game;

@@ -10,7 +10,7 @@ Streaming::Streaming(double tax,Game* game) {
     _tax = tax;
 }
 Streaming::~Streaming() {
-    delete _game;
+
 }
 Game* Streaming::getGame()const{
     return _game;
