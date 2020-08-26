@@ -36,6 +36,6 @@ double Streaming::getTax() const{
 std::string Streaming::toString()const{
     std::ostringstream s;
         s <<getGame()->toString();
-        s<<Streaming::calculatePriceWithTaxGame()<<" colones"<<"\n";
+        s<<"Price with Tax: "<<Streaming::calculatePriceWithTaxGame()<<" colones"<<"\n";
     return s.str();
 }
