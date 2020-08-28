@@ -12,10 +12,11 @@
 #include "Streaming.h"//Calling Streaming Class .h
 #include "Digital.h"//Calling Digital Class .h
 #include "Physical.h"//Calling Physical Class .h
+#include "IPrint.h"//Calling IPrint Class .h
+#include "ISave.h" //Calling ISave Class .h
+ #include "Print.h"//Calling Print Class .h
+ #include "Save.h" //Calling Save Class .h
 
-class Physical;//Composition Class Physical
-class Digital;//Composition Class Digital
-class Streaming;//Composition Class Streaming;
 class Recive {//Declaration Class
     //Methods
 public://public data
@@ -41,16 +42,15 @@ public://public data
     //Save in file void method
     virtual void save(const std::string &filename);
     //String method
-    virtual std::string toString()const;//Virtual
+    virtual std::string toString()const;//Pure Virtual
     //Attributes
 private://private data
     std::string _email;//Attribute email
     Digital* _digital=new Digital();//Pointer to the Class Digital
     Streaming* _streaming= new Streaming();//Pointer to the Class Streaming
     Physical* _physical=new Physical();//Pointer to the Class Physical
-    std::vector<Digital> _listDigital;//Attribute listDigital
-    std::vector<Streaming> _listStreaming;//Attribute listStreaming
-    std::vector<Physical> _listPhysical;//Attribute listPhysical
+    IPrint* _iPrint=new Print();
+    ISave* _iSave=new Save();
 };
 
 
