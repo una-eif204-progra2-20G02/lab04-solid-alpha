@@ -3,7 +3,7 @@
 //
 
 #include "Recive.h"
-
+//Recive class constructors
 Recive::Recive(std::string email) {
     _email=email;
 }
@@ -13,9 +13,11 @@ Recive::Recive(std::string email, Digital *const digital, Streaming *const strea
     _streaming=streaming;
     _physical=physical;
 }
+//Recive destructor
 Recive::~Recive() {
 
 }
+//Setters and getters
  std::string Recive::getEmail()const{
  return _email;
 }
@@ -41,7 +43,7 @@ Streaming* Recive::getStreaming()const{
 void Recive::setStreaming(Streaming* streaming){
     _streaming=streaming;
 }
-
+//Add methods
 void Recive::addPhysical(Physical* physical){
 _listPhysical.push_back(*physical);
 }
@@ -52,12 +54,13 @@ _listDigital.push_back(*digital);
 void Recive::addStreaming(Streaming * streaming){
 _listStreaming.push_back(*streaming);
 }
+//Save method implementation
 void Recive::save(const std::string &filename){
     std::ofstream out (filename, std::ios_base::trunc);
     out<<Recive::toString();
     out.close();
-
 }
+//toString implementation
 std::string Recive::toString()const{
     std::ostringstream s;
     s<<"Correo enviado  al correo a  "<<getEmail()<<"\n";

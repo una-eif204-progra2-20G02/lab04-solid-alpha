@@ -2,15 +2,18 @@
 // Created by Pc on 24/8/2020.
 //
 #include "Digital.h"
+//Constructors
 Digital::Digital(){}
 Digital::Digital(double tax, double discount,Game* game){
 _game=game;
 _tax=tax;
 _discount=discount;
 }
+//Destructor
 Digital::~Digital(){
 
 }
+//Sets and gets declarations
 double Digital::getDiscount()const{
     return _discount;
 }
@@ -29,7 +32,7 @@ Game* Digital::getGame()const{
 void Digital::setGame(Game* game){
     _game=game;
 }
-
+//Calculate methods implementation
 double Digital::calculatePriceWithTaxGame() const {
     double y=0.0;
         y= Digital::calculateDiscountGame()*(1+Digital::getTax());
@@ -43,7 +46,7 @@ double Digital::calculateDiscountGame()const{
     return x;
 }
 
-
+//toString implementation
 
 std::string Digital::toString()const{
     std::ostringstream s;

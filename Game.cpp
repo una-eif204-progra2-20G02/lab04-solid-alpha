@@ -2,7 +2,8 @@
 // Created by dell on 23/8/2020.
 //
 
-#include "Game.h"
+#include "Game.h"//Includes Game .h
+//Constructors
 Game::Game():Product(){
 
 }
@@ -11,13 +12,16 @@ Game::Game(std::string name,double price):Product(){
    _name=name;
    _price=price;
 }
+//Destructors
 Game::~Game(){
 
 }
+//Sets and gets implementation
 const std::string & Game::getName() const {return _name;}
 void Game::setName(const std::string &name) {_name=name;}
 double Game::getPrice() const {return _price;}
 void Game::setPrice(double price) {_price=price;}
+//toString implementation
 std::string Game::toString() const {
     std::ostringstream s;
     s<<"==Game==\n";

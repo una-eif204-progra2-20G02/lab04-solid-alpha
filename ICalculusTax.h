@@ -4,14 +4,16 @@
 
 #ifndef LAB04_SOLID_ICALCULUSTAX_H
 #define LAB04_SOLID_ICALCULUSTAX_H
+//Include Game class
 #include "Game.h"
 
-
-class ICalculusTax:public Game {
+//Interface class ICalculusTax declaration
+class ICalculusTax:public Game { //Applying inheritance
 public:
-
+//Constructors
     ICalculusTax();
     ~ICalculusTax();
+    //Pure virtual methods
     virtual double calculatePriceWithTaxGame() const = 0;
     virtual std::string toString()const=0;
 };

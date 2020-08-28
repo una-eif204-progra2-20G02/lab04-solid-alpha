@@ -8,16 +8,22 @@
 #include "ICalculusTax.h"
 class Streaming:public ICalculusTax {
 public:
+    //Constructors
     Streaming();
     Streaming(double, Game*);
+    //Destructor
     ~Streaming();
+    //Sets and gets declarations
     virtual Game* getGame()const;
     virtual void setGame(Game*);
     virtual double getTax() const;
     virtual void setTax(double tax);
+    //Calculate method declaration
     virtual double calculatePriceWithTaxGame()const override;
+    //toString declaration
     virtual std::string toString()const;
 private:
+    //Attributes declaration
     double _tax;
     Game* _game=new Game();
 };
