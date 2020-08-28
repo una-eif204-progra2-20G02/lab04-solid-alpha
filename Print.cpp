@@ -2,7 +2,7 @@
 // Created by computer on 8/28/2020.
 //
 
-#include "Print.h"
+#include "Print.h"//Calling Print Class .h
 // Constructors without parameters
 Print::Print():IPrint(){
 
