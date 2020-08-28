@@ -2,17 +2,19 @@
 // Created by Pc on 24/8/2020.
 //
 
-#ifndef LAB04_SOLID_IESPECIFICATIONSDISCOUNTCLASS_H
-#define LAB04_SOLID_IESPECIFICATIONSDISCOUNTCLASS_H
-//Includes libraries
-#include <iostream>
-//Interface class IEspecificationsDiscount declaration
-class IEspecificationsDiscount
+#ifndef LAB04_SOLID_IESPECIFICATIONSDISCOUNTCLASS_H//Conditional of defining Class
+#define LAB04_SOLID_IESPECIFICATIONSDISCOUNTCLASS_H//Defining Class
+#include <iostream>//Calling Library iostream
+class IEspecificationsDiscount//Declaration Class
 {
-public:
-    //Public methods declaration
+    //Methods
+public://public data
+    //Constructor without parameters
     IEspecificationsDiscount();
+    //Destructor
     ~IEspecificationsDiscount();
-    virtual std::string toString()const=0;//Pure virtual methods declaration
+    //String method
+    virtual std::string toString()const=0;//Pure virtual
+
 };
-#endif //LAB04_SOLID_IESPECIFICATIONSDISCOUNTCLASS_H
+#endif //LAB04_SOLID_IESPECIFICATIONSDISCOUNTCLASS_H//End if defining

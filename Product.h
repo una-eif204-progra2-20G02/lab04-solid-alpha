@@ -2,23 +2,21 @@
 // Created by dell on 23/8/2020.
 //
 
-#ifndef LAB04_SOLID_PRODUCT_H
-#define LAB04_SOLID_PRODUCT_H
-//Includes libraries
-#include<iostream>
-#include <sstream>
+#ifndef LAB04_SOLID_PRODUCT_H//Conditional of defining Class
+#define LAB04_SOLID_PRODUCT_H//Defining Class
 
-class Product{ //Class product declaration
+#include<iostream>//Calling Library iostream
+#include <sstream>//Calling Library sstream
 
-public:
-    //Public methods declaration
+class Product{//Declaration Class
+//Methods
+public://public data
+    //Constructor without parameters
     Product(){;}
+    //Destructor
     ~Product(){;}
-    virtual std::string toString()const =0; //Pure virtual method declaration
-
-
+    //String method
+    virtual std::string toString()const =0;//Pure virtual
 
 };
-
-
-#endif //LAB04_SOLID_PRODUCT_H
+#endif //LAB04_SOLID_PRODUCT_H//End if defining

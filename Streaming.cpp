@@ -2,40 +2,39 @@
 // Created by computer on 8/24/2020.
 //
 
-#include "Streaming.h"
-//Constructors implementations
+#include "Streaming.h"//Calling Streaming Class .h
+// Constructors without parameters
 Streaming::Streaming()  {}
-
+// Constructors with parameters
 Streaming::Streaming(double tax,Game* game) {
     _game=game;
     _tax = tax;
 }
-//Destructor implementation
+//Destructor
 Streaming::~Streaming() {
 
 }
-//Sets and gets implementations
+// Gets methods
 Game* Streaming::getGame()const{
     return _game;
 }
-void Streaming::setGame(Game* game){
-    _game=game;
-}
-
 double Streaming::getTax() const{
  return _tax;
+}
+// Sets methods
+void Streaming::setGame(Game* game){
+    _game=game;
 }
  void Streaming::setTax(double tax){
      _tax=tax;
 }
-//Calculate method implementation
+//Double calculate tax
  double Streaming::calculatePriceWithTaxGame()const {
     double valor=0.0;
         valor=((getGame()->getPrice())*(1+Streaming::getTax()));
     return valor;
-
 }
-//toString implementation
+//String Method returning string
 std::string Streaming::toString()const{
     std::ostringstream s;
         s <<getGame()->toString();

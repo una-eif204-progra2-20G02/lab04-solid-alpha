@@ -2,65 +2,66 @@
 // Created by computer on 8/24/2020.
 //
 
-#include "Recive.h"
-//Recive class constructors
+#include "Recive.h"//Calling Recive Class .h
+// Constructors with parameters
 Recive::Recive(std::string email) {
     _email=email;
 }
+// Constructors with parameters
 Recive::Recive(std::string email, Digital *const digital, Streaming *const streaming, Physical *const physical){
     _email=email;
     _digital=digital;
     _streaming=streaming;
     _physical=physical;
 }
-//Recive destructor
+//Destructor
 Recive::~Recive() {
 
 }
-//Setters and getters
+// Gets methods
  std::string Recive::getEmail()const{
  return _email;
 }
- void Recive::setEmail(std::string email) {
-    _email=email;
+Digital* Recive::getDigital()const{
+    return _digital;
 }
-
 Physical* Recive::getPhysical()const{
-return _physical;
+    return _physical;
 }
 void Recive::setPhysical(Physical * physical){
- _physical=physical;
+    _physical=physical;
 }
-Digital* Recive::getDigital()const{
-return _digital;
+Streaming* Recive::getStreaming()const{
+    return _streaming;
+}
+// Sets methods
+ void Recive::setEmail(std::string email) {
+    _email=email;
 }
   void Recive::setDigital(Digital* digital){
 _digital=digital;
 }
-Streaming* Recive::getStreaming()const{
-   return _streaming;
-}
 void Recive::setStreaming(Streaming* streaming){
     _streaming=streaming;
 }
-//Add methods
+// add void methods
 void Recive::addPhysical(Physical* physical){
 _listPhysical.push_back(*physical);
 }
 void Recive::addDigital(Digital* digital){
 _listDigital.push_back(*digital);
 }
-
 void Recive::addStreaming(Streaming * streaming){
 _listStreaming.push_back(*streaming);
 }
-//Save method implementation
+//Save in file void method
 void Recive::save(const std::string &filename){
     std::ofstream out (filename, std::ios_base::trunc);
     out<<Recive::toString();
     out.close();
+
 }
-//toString implementation
+//String Method returning string
 std::string Recive::toString()const{
     std::ostringstream s;
     s<<"Correo enviado  al correo a  "<<getEmail()<<"\n";
