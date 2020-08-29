@@ -8,6 +8,7 @@
 #include <sstream>//Calling Library sstream
 #include <string>//Calling Library string
 #include <iostream>//Calling Library iostream
+#include <fstream>//Calling Library fstream
 #include "Streaming.h"//Calling Streaming Class .
 #include "Digital.h"//Calling Digital Class .h
 #include "Physical.h"//Calling Physical Class .h
@@ -27,7 +28,9 @@ public://Data public
     virtual void addStreaming (Streaming* )override;//Pure Virtual
     //String method
     virtual std::string toString()const override;//Pure Virtual
-private://Data private
+    //Save method
+    virtual void save(const std::string &filename)override;//Virtual
+protected://Data protected
     std::vector<Digital> _listDigital;//Attribute listDigital
     std::vector<Streaming> _listStreaming;//Attribute listStreaming
     std::vector<Physical> _listPhysical;//Attribute listPhysical

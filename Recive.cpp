@@ -51,11 +51,11 @@ void  Recive::addDigital(Digital* digital){
     _iPrint->addDigital(digital);
 }
 void Recive::addStreaming (Streaming* streaming){
-    _iPrint->addStreaming(streaming);
+
 }
 //Save in file void method
 void Recive::save(const std::string &filename){
-    _iSave->save(filename);
+   _iPrint->save(filename);
 }
 std::string Recive::toString()const {
     std::ostringstream salida;

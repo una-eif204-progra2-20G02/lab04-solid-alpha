@@ -2,6 +2,7 @@
 // Created by computer on 8/28/2020.
 //
 
+#include <fstream>
 #include "Print.h"//Calling Print Class .h
 // Constructors without parameters
 Print::Print():IPrint(){
@@ -21,7 +22,13 @@ void Print::addDigital(Digital* digital){
 void Print::addStreaming(Streaming * streaming){
     _listStreaming.push_back(*streaming);
 }
-
+//Save into a file
+void Print::save(const std::string &filename) {
+    std::ofstream salida;
+    salida.open(filename,std::ios::app);
+    salida<<Print::toString();
+    salida.close();
+}
 //String Method returning string
 std::string Print::toString()const{
     std::ostringstream salida;

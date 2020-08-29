@@ -8,6 +8,7 @@
 #include <sstream>//Calling Library sstream
 #include <string>//Calling Library string
 #include <iostream>//Calling Library iostream
+#include <ostream>//Calling Library ostream
 #include "Streaming.h"//Calling Streaming Class .
 #include "Digital.h"//Calling Digital Class .h
 #include "Physical.h"//Calling Physical Class .h
@@ -23,6 +24,8 @@ public://Data public
     virtual void addStreaming (Streaming* )=0;//Pure Virtual
     //String method
     virtual std::string toString()const=0;//Pure Virtual
+    //Save method
+    virtual void save(const std::string &filename)=0;//Pure Virtal
 };
 
 

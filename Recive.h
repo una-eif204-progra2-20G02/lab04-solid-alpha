@@ -13,9 +13,8 @@
 #include "Digital.h"//Calling Digital Class .h
 #include "Physical.h"//Calling Physical Class .h
 #include "IPrint.h"//Calling IPrint Class .h
-#include "ISave.h" //Calling ISave Class .h
- #include "Print.h"//Calling Print Class .h
- #include "Save.h" //Calling Save Class .h
+#include "Print.h"//Calling Print Class .h
+
 
 class Recive {//Declaration Class
     //Methods
@@ -50,7 +49,7 @@ private://private data
     Streaming* _streaming= new Streaming();//Pointer to the Class Streaming
     Physical* _physical=new Physical();//Pointer to the Class Physical
     IPrint* _iPrint=new Print();
-    ISave* _iSave=new Save();
+
 };
 
 
