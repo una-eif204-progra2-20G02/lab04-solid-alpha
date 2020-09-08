@@ -30,14 +30,13 @@ void Streaming::setGame(Game* game){
 }
 //Double calculate tax
  double Streaming::calculatePriceWithTaxGame()const {
-    double valor=0.0;
-        valor=((getGame()->getPrice())*(1+Streaming::getTax()));
+       double valor=(getGame()->getPrice())*(1+Streaming::getTax());
     return valor;
 }
 //String Method returning string
 std::string Streaming::toString()const{
-    std::ostringstream s;
-        s <<getGame()->toString();
-        s<<"Price with Tax: "<<Streaming::calculatePriceWithTaxGame()<<" colones"<<"\n";
-    return s.str();
+    std::ostringstream salida;
+        salida <<getGame()->toString();
+        salida<<"Price with Tax: "<<Streaming::calculatePriceWithTaxGame()<<" colones"<<"\n";
+    return salida.str();
 }

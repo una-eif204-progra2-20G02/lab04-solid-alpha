@@ -45,19 +45,18 @@ void Physical::setTax(double tax){
 }
 //Double calculate tax
 double Physical::calculatePriceWithTaxGame()const{
-    double valor=0.0;
-        valor=((getGame()->getPrice())*(1+Physical::getTax()));
+       double valor=(getGame()->getPrice())*(1+Physical::getTax());
     return valor;
 }
 //String Method returning string
 std::string Physical::toString()const{
-    std::ostringstream s;
+    std::ostringstream salida;
 
-        s <<getGame()->toString();
-        s<<"Weight of Game: "<<getItemWeight()<<" lb"<<"\n";
-        s<<"Dimension of Game: "<<getProductDimensions()<<"\n";
-        s<<"Price with tax: "<<Physical::calculatePriceWithTaxGame()<<" colones"<<"\n";
-    return s.str();
+        salida <<getGame()->toString();
+        salida<<"Weight of Game: "<<getItemWeight()<<" lb"<<"\n";
+        salida<<"Dimension of Game: "<<getProductDimensions()<<"\n";
+        salida<<"Price with tax: "<<Physical::calculatePriceWithTaxGame()<<" colones"<<"\n";
+    return salida.str();
 }
 
 

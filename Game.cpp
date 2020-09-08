@@ -24,9 +24,9 @@ void Game::setName(const std::string &name) {_name=name;}
 void Game::setPrice(double price) {_price=price;}
 //String Method returning string
 std::string Game::toString() const {
-    std::ostringstream s;
-    s<<"==Game==\n";
-    s<<"Name  : "<<Game::getName()<<std::endl;
-    s<<"Price : "<<Game::getPrice()<<" colones"<<"\n";
-    return s.str();
+    std::ostringstream salida;
+    salida<<"==Game==\n";
+    salida<<"Name  : "<<Game::getName()<<std::endl;
+    salida<<"Price : "<<Game::getPrice()<<" colones"<<"\n";
+    return salida.str();
 }

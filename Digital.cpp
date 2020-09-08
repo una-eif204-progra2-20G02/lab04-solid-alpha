@@ -36,21 +36,19 @@ void Digital::setGame(Game* game){
 }
 //Double calculate tax
 double Digital::calculatePriceWithTaxGame() const {
-    double y=0.0;
-        y= Digital::calculateDiscountGame()*(1+Digital::getTax());
-    return y;
+    double valor= Digital::calculateDiscountGame()*(1+Digital::getTax());
+    return valor;
 }
 //Double calculate discount
 double Digital::calculateDiscountGame()const{
-    double x=0.0;
-     x=getGame()->getPrice()*(1-Digital::getDiscount());
-    return x;
+    double valor=getGame()->getPrice()*(1-Digital::getDiscount());
+    return valor;
 }
 //String Method returning string
 std::string Digital::toString()const{
-    std::ostringstream s;
-            s << getGame()->toString() ;
-            s << "Price with discout: " << Digital::calculateDiscountGame() <<" colones"<<"\n";
-            s << "Price with tax: " << Digital::calculatePriceWithTaxGame() <<" colones"<<"\n";
-    return s.str();
+    std::ostringstream salida;
+            salida << getGame()->toString() ;
+            salida << "Price with discout: " << Digital::calculateDiscountGame() <<" colones"<<"\n";
+            salida << "Price with tax: " << Digital::calculatePriceWithTaxGame() <<" colones"<<"\n";
+    return salida.str();
 }
